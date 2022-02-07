@@ -16,7 +16,7 @@ if __name__ == '__main__':
   X = read_pixels(folder)
   myPixelClassifier = PixelClassifier()
   y = myPixelClassifier.classify(X)
-  
-  print('Precision: %f' % (sum(y==1)/y.shape[0]))
+  # print("Y 10 rows: ", y[:10])
+  print('Precision: %f' % (sum(y==3)/y.shape[0]))
 
   

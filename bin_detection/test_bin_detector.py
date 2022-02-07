@@ -7,6 +7,7 @@ import os, cv2
 from bin_detector import BinDetector
 import yaml
 
+import matplotlib.pyplot as plt; plt.ion()
 
 def iou(box1,box2):
   '''
@@ -32,7 +33,9 @@ def compare_boxes(true_boxes, estm_boxes):
 
   accuracy = 0.0
   for box1 in true_boxes:
+    # print(box1)
     for box2 in estm_boxes:
+      # print("2: ", box2)
       if iou(box1,box2) >= 0.5:
         accuracy += 1.0
         break
